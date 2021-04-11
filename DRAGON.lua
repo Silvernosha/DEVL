@@ -98,7 +98,7 @@ echo -e "\e[36m"
 done
 ]])  
 file:close()  
-file = io.open("DV", "w")  
+file = io.open("DL", "w")  
 file:write([[
 #!/usr/bin/env bash
 cd $HOME/DEVL
