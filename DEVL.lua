@@ -12171,7 +12171,7 @@ if text == "تفعيل الافلام" and Mod(msg) then
 send(msg.chat_id_, msg.id_,'⌯︙ تم تفعيل الافلام')
 database:set(bot_id.."SOFI:movie_bot"..msg.chat_id_,"open")
 end
-if text and text:match("^فلم(.*)$") and database:get(bot_id.."SOFI:movie_bot"..msg.chat_id_) == "open" then
+if text and text:match("^فلم (.*)$") and database:get(bot_id.."SOFI:movie_bot"..msg.chat_id_) == "open" then
 local Textm = text:match("^فلم (.*)$")
 data,res = https.request('https://forhassan.ml/Black/movie.php?serch='..URL.escape(Textm)..'')
 if res == 200 then
