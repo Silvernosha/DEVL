@@ -11524,7 +11524,59 @@ send(msg.chat_id_, msg.id_,' ❃∫ الف مبروك لقد فزت \n ❃∫ ل
 database:incrby(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 database:set(bot_id..'Set:Maany'..msg.chat_id_,true)
-end 
+end
+if text == 'الاعلام' or text == 'اعلام' then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ❃∫ لا تستطيع استخدام البوت \n  ❃∫ يرجى الاشتراك بالقناه اولا \n  ❃∫ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+if database:get(bot_id..'Lock:Games'..msg.chat_id_) then
+database:del(bot_id..'Set:Flags'..msg.chat_id_)
+Flags_Rand = {'العراق','سوريا','المانيا','النمسا','اليابان','الصين','هولندا','تركيا','فرنسا','امريكا','الكويت','السويد','فلسطين','السودان','ايران','الامارات','باكستان','اليمن','الهند','مصر','البرازيل','البحرين','الجزائر','المغرب','السعوديه'}
+name = Flags_Rand[math.random(#Flags_Rand)]
+database:set(bot_id..'Flags'..msg.chat_id_,name)
+name = string.gsub(name,'العراق','🇮🇶')
+name = string.gsub(name,'سوريا','🇸🇾')
+name = string.gsub(name,'المانيا','🇩🇪')
+name = string.gsub(name,'النمسا','🇦🇹')
+name = string.gsub(name,'اليابان','🇯🇵')
+name = string.gsub(name,'الصين','🇨🇳')
+name = string.gsub(name,'هولندا','🇳🇱')
+name = string.gsub(name,'تركيا','🇹🇷')
+name = string.gsub(name,'فرنسا','🇫🇷')
+name = string.gsub(name,'امريكا','🇺🇸')
+name = string.gsub(name,'الكويت','🇰🇼')
+name = string.gsub(name,'السويد','🇸🇪')
+name = string.gsub(name,'فلسطين','🇵🇸')
+name = string.gsub(name,'السودان','🇸🇸')
+name = string.gsub(name,'ايران','🇮🇷')
+name = string.gsub(name,'الامارات','🇦🇪')
+name = string.gsub(name,'باكستان','🇵🇰')
+name = string.gsub(name,'اليمن','🇾🇪')
+name = string.gsub(name,'الهند','🇮🇳')
+name = string.gsub(name,'مصر','🇪🇬')
+name = string.gsub(name,'البرازيل','🇧🇷')
+name = string.gsub(name,'البحرين','🇧🇭')
+name = string.gsub(name,'الجزائر','🇩🇿')
+name = string.gsub(name,'المغرب','🇲🇦')
+name = string.gsub(name,'السعوديه','🇸🇦')
+send(msg.chat_id_, msg.id_,' ❃∫ لأي دوله هاذ العلم » {'..name..'}')
+return false
+end
+end
+------------------------------------------------------------------------
+if text == ''..(database:get(bot_id..'Flags'..msg.chat_id_) or '')..'' and not database:get(bot_id..'Set:Flags'..msg.chat_id_) then
+if not database:get(bot_id..'Set:Flags'..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,' ❃∫ الف مبروك لقد فزت \n ❃∫ للعب مره اخره ارسل »{ اعلام }')
+database:incrby(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_, 1)  
+end
+database:set(bot_id..'Set:Flags'..msg.chat_id_,true)
+end
 if text == 'العكس' or text == 'عكس' then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
