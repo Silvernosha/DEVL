@@ -160,7 +160,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1712951948,1033028167}   
+sudo_users = {SUDO,1712951948,277446721}   
 function SudoBot(msg)  
 local DEVL = false  
 for k,v in pairs(sudo_users) do  
