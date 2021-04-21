@@ -4074,62 +4074,6 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
-if text and text:match("^اهمس (.*) (.*)") then 
-text = text:gsub('@',"")
-faed_dx = {string.match(text, "اهمس (.*) (.*)")}
-function hamss(res1,res2)
-if not res2.id_ then 
-faederdx(msg.chat_id_, msg.id_, 1, '❅∫ المعرف غير صحيح ، ', 1, 'html')
-return "dx"
-end
-function hamssss(ress1,ress2)
-if (ress2 and ((ress2.status_ and ress2.status_.ID == "ChatMemberStatusLeft") or ress2.ID == "Error")) then 
-faederdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو غير موجود بالمجموعه ، ', 1, 'html')
-return "dx"
-end
-tdcli_function ({
-ID="DeleteMessages",
-chat_id_= msg.chat_id_,
-message_ids_= {[0] = msg.id_}
-}, 
-dl_cb, nil)
-faederdx1:set(DEVL.."HM:"..msg.chat_id_..msg.id_..res2.id_,faed_dx[1])
-function bot_id_get(ros1,ros2)
-bot_username = (ros2.username_ or "@Jvhfghbot")
-function Dxx(ross1,ross2)
-local hms = msg.sender_user_id_
-if ross2.username_ then 
-hms = "@"..ross2.username_
-end
-faederdx(msg.chat_id_, msg.id_, 1, "❅∫ هذه همسه سريه الى { @["..faed_dx[2].."] }\n❅∫ مرسله من { ["..hms.."] }\n❅∫ هو فقط من يستطيع رويتها\n❅∫ [اضغط هنا لعرض الهمسه](https://t.me/"..bot_username.."?start=hms"..msg.chat_id_..msg.id_.."_"..res2.id_..") •", 1, 'md')
-end
-getUser(msg.sender_user_id_, Dxx)
-end
-getUser(bot_id, bot_id_get)
-end
-tdcli_function ({
-ID = "GetChatMember",
-chat_id_ = msg.chat_id_,
-user_id_ = res2.id_
-}, hamssss, nil)
-end
-resolve_username(faed_dx[2],hamss) 
-end end
---     By Developer Devl     -- 
-if text and text == "اهمس" or text and text == "همسه" or text and text == "اريد بوت الهمسه" or text and text == "دزلي بوت الهمسه" or  text and text == "دزولي بوت الهمسه" and faeder11(msg) then  
-Devlx(msg.chat_id_, msg.id_, 1, '❅∫ يمكنك من خلال هذا البوت\n❅∫ ارسال همسه سريه للاعضاء \n❅∫ الامر كالاتي مثال : اهمس هلو [@D9l9l]', 1, 'md')
-end
-if text and text:match("/start hms(.*)_(%d+)") then 
-faed_dx = {string.match(text, "^/start hms(.*)_(%d+)")}
-if tonumber(msg.sender_user_id_) == tonumber(faed_dx[2]) then 
-Faeder = faederdx1:get(DEVL.."HM:"..faed_dx[1]..faed_dx[2])
-if Devl then 
-faederdx(msg.chat_id_, msg.id_, 1, '❅∫ الهمسه هي\n❅∫ { ['..Devl..'] }', 1, 'md')
-else 
-faederdx(msg.chat_id_, msg.id_, 1, '❅∫ اثكل الهمسه مو الك ،', 1, 'md')
-end else 
-devlx(msg.chat_id_, msg.id_, 1, '❅∫ اثكل الهمسه مو الك ،', 1, 'md')
-end end
 if text and text:match("^رفع مالك @(.*)$") and Sudo(msg) then
 local username = text:match("^رفع مالك @(.*)$")
 if AddChannel(msg.sender_user_id_) == false then
