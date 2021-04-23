@@ -3553,6 +3553,14 @@ if result.sender_user_id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع حظر البوت عام")
 return false 
@@ -3585,7 +3593,15 @@ if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_," ⌯︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
-end      
+end     
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
 if tonumber(result.id_) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع حظر البوت عام")
 return false 
@@ -3621,6 +3637,14 @@ if userid == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
 if tonumber(userid) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع حظر البوت عام")
 return false 
@@ -3651,6 +3675,14 @@ end
 function start_function(extra, result, success)
 if result.sender_user_id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك كتم المطور الاساسي \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
@@ -3684,7 +3716,15 @@ if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_," ⌯︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
-end      
+end     
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
 if tonumber(result.id_) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع كتم البوت عام")
 return false 
@@ -3718,6 +3758,14 @@ return false
 end
 if userid == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك كتم المطور الاساسي \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+return false 
+end
+if result.sender_user_id_ == tonumber(1712951948) then
+send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
 if tonumber(userid) == tonumber(bot_id) then  
@@ -6190,7 +6238,7 @@ send(msg.chat_id_, msg.id_, ' ⌯︙ تم تنزيل جميع الضلعات ب�
 end
 if text == ("تاك للضلعات") and Mod(msg) then
 local list = database:smembers(bot_id..'Girl:User'..msg.chat_id_)
-t = "\n ⌯︙ قائمة الضلعات الكروب \nٴ≪┉ ┉ ┉ ┉ ┉ 𝐷𝐸𝑉𝐿 ┉  ┉ ┉ ┉ ┉≫ٴ\n"
+t = "\n ⌯︙ قائمة الضلعات الكروب \nٴ≪┉ ┉ ┉ ┉ ┉ ??𝐸𝑉𝐿 ┉  ┉ ┉ ┉ ┉≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
