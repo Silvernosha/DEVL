@@ -12741,17 +12741,17 @@ t = v.."\n"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == "تعطيل الافلام" and Mod(msg) then
-send(msg.chat_id_, msg.id_, '⌯︙ تم تعطيل الافلام')
-database:set(bot_id.."SOFI:movie_bot"..msg.chat_id_,"close")
+if text == "تعطيل الافلام" and Owner(msg) then
+send(msg.chat_id_, msg.id_, '✫: تم تعطيل الافلام')
+database:set(bot_id.."movie_bot"..msg.chat_id_,"close")
 end
-if text == "تفعيل الافلام" and Mod(msg) then
-send(msg.chat_id_, msg.id_,'⌯︙ تم تفعيل الافلام')
-database:set(bot_id.."SOFI:movie_bot"..msg.chat_id_,"open")
+if text == "تفعيل الافلام" and Owner(msg) then
+send(msg.chat_id_, msg.id_,'✫: تم تفعيل الافلام')
+database:set(bot_id.."movie_bot"..msg.chat_id_,"open")
 end
-if text and text:match("^فلم (.*)$") and database:get(bot_id.."SOFI:movie_bot"..msg.chat_id_) == "open" then
+if text and text:match("^فلم (.*)$") and database:get(bot_id.."movie_bot"..msg.chat_id_) == "open" then
 local Textm = text:match("^فلم (.*)$")
-data,res = https.request('https://forhassan.ml/Black/movie.php?serch='..URL.escape(Textm)..'')
+data,res = https.request('https://boyka-api.ml/movie.php?serch='..URL.escape(Textm)..'')
 if res == 200 then
 getmo = json:decode(data)
 if getmo.Info == true then
