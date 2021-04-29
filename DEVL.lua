@@ -3553,14 +3553,6 @@ if result.sender_user_id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع حظر البوت عام")
 return false 
@@ -3593,15 +3585,7 @@ if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_," ⌯︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
-end     
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
+end      
 if tonumber(result.id_) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع حظر البوت عام")
 return false 
@@ -3637,14 +3621,6 @@ if userid == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
 if tonumber(userid) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع حظر البوت عام")
 return false 
@@ -3675,14 +3651,6 @@ end
 function start_function(extra, result, success)
 if result.sender_user_id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك كتم المطور الاساسي \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
@@ -3716,15 +3684,7 @@ if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_," ⌯︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
-end     
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
+end      
 if tonumber(result.id_) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, " ⌯︙ لا تسطيع كتم البوت عام")
 return false 
@@ -3758,14 +3718,6 @@ return false
 end
 if userid == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا يمكنك كتم المطور الاساسي \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(1712951948) then
-send(msg.chat_id_, msg.id_, "✫: لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
 if tonumber(userid) == tonumber(bot_id) then  
@@ -6238,7 +6190,7 @@ send(msg.chat_id_, msg.id_, ' ⌯︙ تم تنزيل جميع الضلعات ب�
 end
 if text == ("تاك للضلعات") and Mod(msg) then
 local list = database:smembers(bot_id..'Girl:User'..msg.chat_id_)
-t = "\n ⌯︙ قائمة الضلعات الكروب \nٴ≪┉ ┉ ┉ ┉ ┉ ??𝐸𝑉𝐿 ┉  ┉ ┉ ┉ ┉≫ٴ\n"
+t = "\n ⌯︙ قائمة الضلعات الكروب \nٴ≪┉ ┉ ┉ ┉ ┉ 𝐷𝐸𝑉𝐿 ┉  ┉ ┉ ┉ ┉≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8536,9 +8488,9 @@ if result.members_[i].status_.ID == "ChatMemberStatusMember" then
 tr = ''
 elseif result.members_[i].status_.ID == "ChatMemberStatusEditor" then  
 t = t + 1
-tr = ' {★}'
+tr = ' {★}'
 end
-text = text..">> [@"..ta.username_..']'..tr.."\n"
+text = text..">> [@"..ta.username_..']'..tr.."\n"
 if #admins == 0 then
 send(msg.chat_id_, msg.id_, " ⌯︙ لا توجد بوتات في الكروب")
 return false 
@@ -10607,7 +10559,7 @@ local List = {
 ⚕ 𓆰 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝑻𝒐 𝑮𝒓𝒐𝒖𝒑 ★
 • 🖤 | 𝑼𝑬𝑺 : #username ‌‌‏⚚
 • 🖤 | 𝑺𝑻𝑨 : #stast 🧙🏻‍♂ ☥
-• 🖤 | 𝑰𝑫 : #id ‌‌�������������������♕
+• 🖤 | 𝑰𝑫 : #id ‌‌‏♕
 • 🖤 | 𝑴𝑺𝑮 : #msgs 𓆊
 ]],
 [[
@@ -11817,7 +11769,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ❃∫ لا ت��تط��ع استخدام ال��وت \n  ��∫ يرجى الاشتراك بالقناه اولا \n  ❃∫ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ❃∫ لا تستطيع استخدام البوت \n  ❃∫ يرجى الاشتراك بالقناه اولا \n  ❃∫ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -12256,7 +12208,7 @@ Text = [[
 ⌯︙ نسبه الكره
 ⌯︙ نسبه الحب
 ⌯︙ ءall
- •━━━━━━━━━━━━━•ٴ
+ •━━━━━━━━━━━━━•ٴ
 彡 .[𝐷𝐸𝑉𝐿](t.me/DEVIL901)➢
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
@@ -12294,7 +12246,7 @@ Text = [[
 ⌯︙ صوره
 ⌯︙ وصف
 ⌯︙ تكرار + عدد
- •━━━━━━━━━━━━━•ٴ
+ •━━━━━━━━━━━━━•ٴ
 彡 .[𝐷𝐸𝑉𝐿](t.me/DEVIL901)➢
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
@@ -12341,7 +12293,7 @@ Text = [[
 •━━━━━━━━━━━━━━•ٴ
 ⌯︙ حذف + امر ...
 •━━━━━━━━━━━━━━•ٴ
-⌯︙ امر 
+⌯︙ امر 
 ⌯︙ الاوامر المضافه
 •━━━━━━━━━━━━━━•ٴ
 彡 .[𝐷𝐸𝑉𝐿](t.me/DEVIL901)➢
@@ -12396,7 +12348,7 @@ Text = [[
 ⌯︙ تغير رد العضو + اسم
 ⌯︙ تغير امر الاوامر
 ⌯︙ تغير امر م1 ~ الئ م10
- •━━━━━━━━━━━━━━•ٴ
+ •━━━━━━━━━━━━━━•ٴ
 彡 .[𝐷𝐸𝑉𝐿](t.me/DEVIL901)➢
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
@@ -12548,7 +12500,7 @@ local help_text = database:get(bot_id..'help8_text')
 Text = [[
 ⌯︙اوامر المطورين 
  •━━━━━━━━━━━━━•ٴ
-⌯︙ تفعيل ← تعطيل 
+⌯︙ تفعيل ← تعطيل 
 ⌯︙ المجموعات ← المشتركين ← الاحصائيات
 ⌯︙ رفع ← تنزيل منشئ اساسي
 ⌯︙ مسح الاساسين ← المنشئين الاساسين
@@ -12662,9 +12614,9 @@ Text = [[
 •━━━━━━━━━━━━━•ٴ
 ⌯︙ الرابط ← القوانين – الترحيب
 ⌯︙ ايدي ← اطردني 
-⌯︙ اسمي ← المطور  
+⌯︙ اسمي ← المطور  
 ⌯︙ كشف ~ بالرد بالمعرف
-  •━━━━━━━━━━━━━•ٴ
+  •━━━━━━━━━━━━━•ٴ
 ⌯︙ اسم البوت + الامر ↑↓
 •━━━━━━━━━━━━━•ٴ
 ⌯︙ بوسه بالرد 
@@ -13307,7 +13259,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '1��⃣', callback_data="/help1"},{text = '2️⃣', callback_data="/help2"},{text = '3️⃣', callback_data="/help3"},
+{text = '1️⃣', callback_data="/help1"},{text = '2️⃣', callback_data="/help2"},{text = '3️⃣', callback_data="/help3"},
 },
 {
 {text = '4️⃣', callback_data="/help4"},{text = '5️⃣', callback_data="/help5"},
