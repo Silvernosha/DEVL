@@ -3943,7 +3943,7 @@ end,nil)
 end,nil)
 end
 end
-if text == 'الملفات' and DevDEVLW(msg) then
+if text == 'الملفات' and DevSoFi(msg) then
 t = ' ❃∫ ملفات السورس ديفل ↓\n≪━━━━━━𝘽𝙆━━━━━━≫ \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -3955,7 +3955,7 @@ end
 send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
-if DevDEVLW(msg) then
+if DevSoFi(msg) then
 local Get_Files, res = https.request("https://raw.githubusercontent.com/DEVLLTEAM/Files_Devl/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
@@ -3984,7 +3984,7 @@ return false
 end
 end
 
-if text and text:match("^(تعطيل) (.*)(.lua)$") and DevDEVLW(msg) then
+if text and text:match("^(تعطيل) (.*)(.lua)$") and DevSoFi(msg) then
 local name_t = {string.match(text, "^(تعطيل) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
 local file_bot = io.open("File_Bot/"..file,"r")
@@ -4004,7 +4004,7 @@ send(msg.chat_id_, msg.id_," ❃∫ عذرا الملف لايدعم سورس د
 end
 return false
 end
-if text and text:match("^(تفعيل) (.*)(.lua)$") and DevDEVLW(msg) then
+if text and text:match("^(تفعيل) (.*)(.lua)$") and DevSoFi(msg) then
 local name_t = {string.match(text, "^(تفعيل) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
 local file_bot = io.open("File_Bot/"..file,"r")
@@ -4026,7 +4026,7 @@ send(msg.chat_id_, msg.id_," ❃∫ عذرا الملف لايدعم سورس د
 end
 return false
 end
-if text == "مسح الملفات" and DevDEVLW(msg) then
+if text == "مسح الملفات" and DevSoFi(msg) then
 os.execute("rm -fr File_Bot/*")
 send(msg.chat_id_,msg.id_," ❃∫ تم مسح الملفات")
 return false
