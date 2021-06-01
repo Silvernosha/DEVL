@@ -2695,24 +2695,24 @@ send(msg.chat_id_, msg.id_,' ⌯︙ تم ازالة جميع الاوامر ال
 end
 end
 if text == "ترتيب الاوامر" and Constructor(msg) then
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"ا")
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"م")
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"اد")
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"مد")
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"من")
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"اس")
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"تعط")
-database:set(bot_id.."DEVL:Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
-database:sadd(bot_id.."DEVL:List:Cmd:Group:New"..msg.chat_id_,"تفع")
-send(msg.chat_id_, msg.id_,"⌔︙تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")  
-end
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ا")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"م")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"مد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"من")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اس")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تعط")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تفع")
+ send(msg.chat_id_, msg.id_,"☆:تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")
+ end
 if text == 'اضف امر' and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -12868,7 +12868,7 @@ end
 end
 if text == "شنو رئيك بهاي" or text == "شنو رئيك بهايي" or text == "شنو رئيج بهايي" or text == "شنو رئيج بهاي" or text == "شنو رايك بهاي" or text == "شنو رايك بهايي" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"دور حلوين 🤕😹","جكمه وصخه عوفها ☹️😾","حقيره ومنتكبره 😶😂"}
+local texting = {"دور حلوين 🤕??","جكمه وصخه عوفها ☹️😾","حقيره ومنتكبره 😶😂"}
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
