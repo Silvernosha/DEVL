@@ -3948,7 +3948,7 @@ end,nil)
 end
 end
 if text == 'الملفات' and DevSoFi(msg) then
-t = ' ★︎∫ ملفات ال ديفل ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝗗𝗘𝗩𝗟•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ \n'
+t = ' ★︎∫ ملفات سورس ديفل ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝗗𝗘𝗩𝗟•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -3965,7 +3965,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ★︎∫ اهلا بك في متجر ملفات ديفل\n ★︎∫ ملفات ال ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝗗??𝗩𝗟•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ\n\n"
+local TextS = "\n ★︎∫ اهلا بك في متجر ملفات ديفل\n ★︎∫ ملفات السورس ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝗗??𝗩𝗟•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ\n\n"
 local TextE = "\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝗗𝗘𝗩𝗟•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ\n ★︎∫ علامة تعني { ✓ } ملف مفعل\n ★︎∫ علامة تعني { ✘ } ملف معطل\n ★︎∫ قناة  ديفل ↓\n".." ★︎∫ [اضغط هنا لدخول](t.me/DEVIL901) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
