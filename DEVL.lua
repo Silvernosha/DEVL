@@ -1063,7 +1063,7 @@ end
 if text == 'تحديث السورس★︎' and DevSoFi(msg) then 
 os.execute('rm -rf DEVL.lua')
 os.execute('wget https://raw.githubusercontent.com/DEVLLTEAM/DEVL/main/DEVL.lua')
-send(msg.chat_id_, msg.id_,' ★︎︙ تم تحديث ال \n ★︎︙ لديك اخر اصدار ل ديفل\n ★︎︙ الاصدار » { v 1.6 }')
+send(msg.chat_id_, msg.id_,' ★︎︙ تم تحديث ال \n ★︎︙ لديك اخر اصدار لسورس ديفل\n ★︎︙ الاصدار » { v 1.6 }')
 dofile('DEVL.lua')  
 end
 if text == 'الاصدار ★︎' and DevSoFi(msg) then 
@@ -2330,7 +2330,7 @@ end
 database:set(bot_id..'Num:Add:Bot',Num) 
 send(msg.chat_id_, msg.id_,' ★︎︙ تم تعيين عدد الاعضاء سيتم تفعيل الكروبات التي اعضائها اكثر من  >> {'..Num..'} عضو')
 end
-if text == 'تحديث ال' and DevSoFi(msg) then 
+if text == 'تحديث السورس' and DevSoFi(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
