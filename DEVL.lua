@@ -2342,7 +2342,7 @@ return false
 end
 os.execute('rm -rf DEVL.lua')
 os.execute('wget https://raw.githubusercontent.com/DEVLLTEAM/DEVL/main/DEVL.lua')
-send(msg.chat_id_, msg.id_,' ★︎︙ تم تحديث ال \n ★︎︙ لديك اخر اصدار ل ديفل\n ★︎︙ الاصدار » { v 1.6 }')
+send(msg.chat_id_, msg.id_,' ★︎︙ تم تحديث السورس \n ★︎︙ لديك اخر اصدار لسورس ديفل\n ★︎︙ الاصدار » { v 1.6 }')
 dofile('DEVL.lua')  
 end
 
