@@ -8424,6 +8424,27 @@ end
 send(msg.chat_id_, msg.id_,'['..GetWelcome..']') 
 return false  
 end
+if text == 'تفعيل التحقق' and Manager(msg) then   
+if database:get(bot_id.."Chek:Welcome"..msg.chat_id_) then
+database:del(bot_id.."Chek:Welcome"..msg.chat_id_)
+end
+if not database:get(bot_id..'CAPTCHA'..msg.chat_id_) then
+database:set(bot_id.."CAPTCHA"..msg.chat_id_,true) 
+Text = ' *★︎︙تم تفعيل التحقق*'
+else
+Text = ' *★︎︙بالتاكيد تم تفعيل التحقق*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل التحقق' and Manager(msg) then  
+if not database:get(bot_id..'CAPTCHA'..msg.chat_id_) then
+Text = '\n *★︎︙بالتاكيد تم تعطيل التحقق*'
+else
+database:del(bot_id.."CAPTCHA"..msg.chat_id_) 
+Text = '\n *★︎︙تم تعطيل التحقق*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
 if text == 'تفعيل الترحيب' and Mod(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
