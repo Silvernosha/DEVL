@@ -9572,13 +9572,6 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 end
-if text == ("تصفيه") and msg.reply_to_message_id_ == 0 and BasicConstructor(msg) then
-send(msg.chat_id_, msg.id_,"\n★︎¦ تم تنزيل جميع الرتب  \n")
-database:del(bot_id.."DEVL:Constructor"..msg.chat_id_)
-database:del(bot_id.."DEVL:Manager"..msg.chat_id_)
-database:del(bot_id.."DEVL:Mod:User"..msg.chat_id_)
-database:del(bot_id.."DEVL:Special:User"..msg.chat_id_)
-end
 
 if text == ("مسح ردود المطور") and DevSoFi(msg) then 
 local list = database:smembers(bot_id.."List:Rd:Sudo")
