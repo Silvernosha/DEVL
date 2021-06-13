@@ -1590,6 +1590,24 @@ t = t:gsub('user',('@'..result.username_ or 'لا يوجد'))
 send(msg.chat_id_, msg.id_,'['..t..']')
 end,nil) 
 end 
+end
+if database:get(bot_id.."CAPTCHA"..msg.chat_id_) then
+if msg.content_.ID == "MessageChatJoinByLink" then
+https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
+captcha = math.random(4567,8907);
+cap = math.random(10,50);
+capt = math.random(60,90);
+capc = math.random(100,500);
+local Text ='• قم بختيار الرقم الصحيح الموجود في الصوره\n• ليتم الغاء تقييدك الان'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '9'..capt..'5', callback_data=capt..msg.sender_user_id_},{text =capc..'2', callback_data=capc..msg.sender_user_id_}},
+{{text = '4'..cap..'8', callback_data=cap},{text = captcha, callback_data='okCaptcha'..msg.sender_user_id_}},
+{{text = '1'..capt..'2', callback_data=capt},{text = '7'..capc, callback_data=capc}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://mode-pro.tk/niggax/captcha.php?c='..captcha..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end 
 end 
 --------------------------------------------------------------------------------------------------------------
 if msg.content_.photo_ then  
