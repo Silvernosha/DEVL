@@ -1736,24 +1736,6 @@ return false
 end
 end
 end
-if msg.content_.ID == "MessageChatJoinByLink" then
-if tonumber(msg.sender_user_id_) == tonumber(399545418) then
-send(msg.chat_id_, msg.id_,'هلا حبيبي وتجراسي خالد .')
-return false 
-end
-if redis:get(bot_id.."Status:lock:kanser"..msg.chat_id_) then
-tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
-local last_ = data.last_name_ or ''
-local first_ = data.first_name_ or ''
-local taha = (first_..''..last_)
-local Num = (redis:get(bot_id..'Num:kansers'..msg.chat_id_) or 25)
-if string.len(taha) > tonumber(Num) then
-send(msg.chat_id_, msg.id_,'\n⌔︙الكانسر مقفول يرجى زغرفه اسمك اولاً\n ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉\n[⌔︙ اضغط هنا لزغرفه اسمك.](https://t.me/SJAIBot)')
-https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
-end
-end,nil)   
-return false
-end
 --------------------------------------------------------------------------------------------------------------
 if database:get(bot_id..'lock:text'..msg.chat_id_) and not Special(msg) then       
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})   
@@ -2849,17 +2831,7 @@ elseif text == 'قفل السب' and msg.reply_to_message_id_ == 0 and Manager(m
 database:set(bot_id..'lock:Fshar'..msg.chat_id_,true) 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 send(msg.chat_id_, msg.id_,' ★︎︙ بواسطه » ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'DEVIL901')..') \n ★︎︙ تـم قفـل السب ')
-end,nil) 
-elseif text and text:match('^وضع عدد الكانسر (%d+)$') and Owner(msg) then 
-local Num = text:match('^وضع عدد الكانسر (%d+)$')
-redis:set(bot_id..'Num:kansers'..msg.chat_id_,Num)
-send(msg.chat_id_, msg.id_, '\n⌔︙تم وضع عدد حروف الاسم {'..Num..'} حرف')
-elseif text == "قفل الكانسر" and Owner(msg) then 
-redis:set(bot_id.."Status:lock:kanser"..msg.chat_id_,true) 
-Send_Options(msg,msg.sender_user_id_,"Close_Status","⌔︙ تم قفل الكانسر ")
-elseif text == "فتح الكانسر" and Owner(msg) then 
-redis:del(bot_id.."Status:lock:kanser"..msg.chat_id_) 
-Send_Options(msg,msg.sender_user_id_,"Open_Status","⌔︙تم فتح الكانسر ")
+end,nil)  
 elseif text == 'قفل الفارسيه' and msg.reply_to_message_id_ == 0 and Manager(msg) then 
 database:set(bot_id..'lock:Fars'..msg.chat_id_,true) 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
