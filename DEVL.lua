@@ -1599,8 +1599,8 @@ cap = math.random(10,50);
 capt = math.random(60,90);
 capc = math.random(100,500);
 local Text ='• قم بختيار الرقم الصحيح الموجود في الصوره\n• ليتم الغاء تقييدك الان'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard ={} 
+keyboard.inline_keyboard ={
 {{text = '9'..capt..'5', callback_data=capt..msg.sender_user_id_},{text =capc..'2', callback_data=capc..msg.sender_user_id_}},
 {{text = '4'..cap..'8', callback_data=cap},{text = captcha, callback_data='okCaptcha'..msg.sender_user_id_}},
 {{text = '1'..capt..'2', callback_data=capt},{text = '7'..capc, callback_data=capc}},
