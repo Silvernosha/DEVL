@@ -1599,8 +1599,8 @@ cap = math.random(10,50);
 capt = math.random(60,90);
 capc = math.random(100,500);
 local Text ='• قم بختيار الرقم الصحيح الموجود في الصوره\n• ليتم الغاء تقييدك الان'
-keyboard ={} 
-keyboard.inline_keyboard ={
+keyboard = {} 
+keyboard.inline_keyboard = {
 {{text = '9'..capt..'5', callback_data=capt..msg.sender_user_id_},{text =capc..'2', callback_data=capc..msg.sender_user_id_}},
 {{text = '4'..cap..'8', callback_data=cap},{text = captcha, callback_data='okCaptcha'..msg.sender_user_id_}},
 {{text = '1'..capt..'2', callback_data=capt},{text = '7'..capc, callback_data=capc}},
@@ -8361,21 +8361,21 @@ end
 if text == "الرابط" then 
 local status_Link = database:get(bot_id.."Link_Group:status"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_," *★︎ الرابط معطل*") 
+send(msg.chat_id_, msg.id_,"⚠️┇ الرابط معطل") 
 return false  
 end
-local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)
-if link then  
-send(msg.chat_id_,msg.id_,'𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  𖠐\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝗗𝗘𝗩𝗟•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ*\n ['..link..']')  
-else
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
+if link then                              
+send(msg.chat_id_,msg.id_,'🌐┇ 𝙻𝙸𝙽𝙺 𝙶𝚁𝙾𝚄𝙿.\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n ['..ta.title_..']('..link..')')                          
+else                
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
-database:set(bot_id.."Private:Group:Link"..msg.chat_id_,linkgpp.result)
-linkgp = '𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  ??\n*𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝗗𝗘𝗩𝗟•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ*\n ['..linkgpp.result..']'
+linkgp = '🌐┇ 𝙻𝙸𝙽𝙺 𝙶𝚁𝙾𝚄𝙿.\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n ['..ta.title_..']('..linkgpp.result..')'
 else
-linkgp = ' *★︎ لا يوجد رابط ارسل ضع رابط*'
+linkgp = '♻️┇ لا يوجد رابط ارسل ضع رابط'
 end  
-send(msg.chat_id_, msg.id_,linkgp)
+send(msg.chat_id_, msg.id_,linkgp)              
 end      
 end,nil)
 end
