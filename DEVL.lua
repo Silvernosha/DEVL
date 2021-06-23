@@ -3621,24 +3621,8 @@ send(msg.chat_id_, msg.id_,' ★︎︙ تم قفل التكرار بالكتم')
 elseif text == 'فتح التكرار' and Mod(msg) then 
 database:hdel(bot_id.."flooding:settings:"..msg.chat_id_ ,"flood")  
 send(msg.chat_id_, msg.id_,' ★︎︙ تم فتح التكرار')
-elseif text == "تفعيل الحمايه القصوى" and Owner(msg) then  
-redis:set(bot_id.."Link_Group"..msg.chat_id_,true) 
-redis:set(bot_id.."Status:Status:Lock:Spam"..msg.chat_id_,"del")  
-redis:hset(bot_id.."Spam:Group:User"..msg.chat_id_ ,"Spam:User","del")  
-redis:set(bot_id..'Status:Lock:Id:Py:Photo'..msg.chat_id_,true) 
-redis:set(bot_id.."Chek:Welcome"..msg.chat_id_,true) 
-redis:set(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_,"true")
-redis:set(bot_id.."Status:Cheking:Seted"..msg.chat_id_,"true")
-redis:set(bot_id.."Status:Lock:tagservrbot"..msg.chat_id_,true)   
-list ={"Status:lock:Far","Status:lock:Fsh","Status:Lock:Bot:kick","Status:Lock:User:Name","Status:Lock:hashtak","Status:Lock:Cmd","Status:Lock:Link","Status:Lock:forward","Status:Lock:Keyboard","Status:Lock:geam","Status:Lock:Photo","Status:Lock:Animation","Status:Lock:Video","Status:Lock:Audio","Status:Lock:vico","Status:Lock:Sticker","Status:Lock:Document","Status:Lock:Unsupported","Status:Lock:Markdaun","Status:Lock:Contact","Status:Status:Lock:Spam"}
-for i,lock in pairs(list) do;redis:set(bot_id..lock..msg.chat_id_,"del");end
-redis:set(bot_id.."Status:lockpin"..msg.chat_id_, true) 
-redis:sadd(bot_id.."Status:Lock:pin",msg.chat_id_) 
-tdcli_function ({ ID = "GetChannelFull",  channel_id_ = msg.chat_id_:gsub("-100","") }, function(arg,data)  redis:set(bot_id.."Get:Id:Msg:Pin"..msg.chat_id_,data.pinned_message_id_)  end,nil)
-redis:set(bot_id.."Status:Lock:edit"..msg.chat_id_,true) 
-redis:set(bot_id.."Status:Lock:Bot:kick"..msg.chat_id_,"kick")  
-send(msg.chat_id_, msg.id_,"⌔︙تم تفعيل الحمايه القصوى") 
 end
+
 
 --------------------------------------------------------------------------------------------------------------
 if text == 'تحديث' and DevSoFi(msg) then    
@@ -12674,7 +12658,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = '?? القائمة الرئيسيه 🔙', callback_data="/add"},
+{text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
 {text = ' 𝙎𝙊𝙐𝙍𝘾𝞝 𝗗𝗘𝗩𝗟', url="t.me/DEVIL901"},
