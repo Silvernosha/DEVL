@@ -2752,7 +2752,7 @@ end
 send(msg.chat_id_, msg.id_,' ★︎︙ تم ازالة جميع الاوامر المضافه')  
 end
 end
-if text == 'تفعيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
+if text == 'تفعيل يوتيوب' and Mod(msg) and GetChannelMember(msg) then  
 database:del(bot_id..'searchinbot'..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,' *⌯︙تم تفعيل اليوتيوب*') 
 return false  
@@ -2764,9 +2764,9 @@ return false
 end
 if not database:get(bot_id..'searchinbot'..msg.chat_id_) then
 if text and text:match('^بحث (.*)$') then 
-local TextSearch = text:match('^بحث (.*)$') 
+local TextSearch = text:match('^بحث (.*)$')
 local msg_id = msg.id_/2097152/0.5
-local done = json:decode(https.request("https://vvvzvv.ml/Do/searchinbot.php?token="..token.."&chat_id="..msg.chat_id_.."&from="..msg.sender_user_id_.."&msg="..msg_id.."&Text="..TextSearch.."&n=s")) 
+local done = json:decode(https.request("https://DEVIL901.ml/Do/searchinbot.php?token="..token.."&chat_id="..msg.chat_id_.."&from="..msg.sender_user_id_.."&msg="..msg_id.."&Text="..TextSearch.."&n=s")) 
 end
 end
 if text == "ترتيب الاوامر" and Constructor(msg) then
